@@ -1,13 +1,14 @@
 var fs = require('fs');
 
 exports.list = function (req, res) {
-  // var savedJSON = fs.readFileSync('message.json', 'utf8');
-  // console.log(savedJSON);
+  console.log('in function list');
+  var savedJSON = fs.readFileSync('message.json', 'utf8');
+  console.log(savedJSON);
   // res.json(savedJSON);
 };
 
 exports.create = function (req, res) {
-	fs.writeFile('message.json', req.JSON, function (err) {
+	fs.writeFile('message.json', $.parse(req.data), function (err) {
 	  if (err) throw err;
 	  console.log('It\'s saved!');
 	});

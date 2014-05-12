@@ -98,7 +98,7 @@ function createAnItem(item){
   console.log(text);
 
   console.log('posting');
-  $.post('http://localhost:5000/items', {done: false, text: text}, function(data, status){
+  $.post('http://localhost:5000/items', $.stringify({done: false, text: text}), function(data, status){
   
     console.log('status', status);
   
